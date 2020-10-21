@@ -149,7 +149,7 @@ def forgot():
                 postgresSQL_select_Query ="update accounts set code_repassword =%s where username =%s"
                 cursor.execute(postgresSQL_select_Query,(recode,username))
                 connection.commit()
-                msg2 = 'Please take note is '+recode+'for Repassword'
+                msg2 = 'Please take note is '+recode+' for Repassword'
                 msg = ['Change password successfully',msg2]
         else:
             msg = 'Incorrect username/code repassword!'
