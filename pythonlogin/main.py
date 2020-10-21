@@ -13,7 +13,7 @@ import mimetypes
 
 app = Flask(__name__)
 app.secret_key = 'how_to_be_got_A'
-app.config['SQLALCHEMY_DATABASE_URI'] = ''
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://webadmin:BFCqhr46914@node4943-env-2254395.th.app.ruk-com.cloud:5432/pythonlogin'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
