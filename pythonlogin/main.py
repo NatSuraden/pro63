@@ -149,7 +149,8 @@ def forgot():
                 postgresSQL_select_Query ="update accounts set code_repassword =%s where username =%s"
                 cursor.execute(postgresSQL_select_Query,(recode,username))
                 connection.commit()
-                msg = '---------------Change password successfully-------------Please take note is '+recode+" for Repassword-------"
+                msg2 = 'Please take note is '+recode+'for Repassword'
+                msg = ['Change password successfully',msg2]
         else:
             msg = 'Incorrect username/code repassword!'
     elif request.method == 'POST':
@@ -192,7 +193,8 @@ def register():
             postgres_insert_query = """ INSERT INTO accounts (username, password, email,code_repassword) VALUES (%s,%s,%s,%s)"""
             cursor.execute(postgres_insert_query,(username,password,email,code_repassword))
             connection.commit()
-            msg = '-------------user register successfully---------------------Please take note is '+recode+" for Repassword-------"
+            msg2 = 'Please take note is '+recode+" for Repassword"
+            msg = ['User register successfully',msg2]
     elif request.method == 'POST':
         msg = 'Please fill out the form!'
     return render_template('register.html', msg=msg)
