@@ -13,7 +13,7 @@ import mimetypes
 
 app = Flask(__name__)
 app.secret_key = 'how_to_be_got_A'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1234@127.0.0.1:5432/pythonlogin'
+app.config['SQLALCHEMY_DATABASE_URI'] = ''
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -31,7 +31,7 @@ def login():
         connection = psycopg2.connect(user="webadmin",
                                 password="BFCqhr46914", 
                                 host="node4943-env-2254395.th.app.ruk-com.cloud", 
-                                port="11043", 
+                                port="5432", 
                                 database="pythonlogin")
         cursor = connection.cursor()
         cursor.execute('SELECT * FROM accounts WHERE username = %s AND password = %s', (username, password,))
@@ -64,7 +64,7 @@ def table():
         connection = psycopg2.connect(user="webadmin",
                                 password="BFCqhr46914", 
                                 host="node4943-env-2254395.th.app.ruk-com.cloud", 
-                                port="11043", 
+                                port="5432", 
                                 database="pythonlogin")
         cursor = connection.cursor()
         cursor.execute('SELECT * FROM GoldAPI ')
@@ -81,7 +81,7 @@ def tableTH():
         connection = psycopg2.connect(user="webadmin",
                                 password="BFCqhr46914", 
                                 host="node4943-env-2254395.th.app.ruk-com.cloud", 
-                                port="11043", 
+                                port="5432", 
                                 database="pythonlogin")
         cursor = connection.cursor()
         cursor.execute('SELECT * FROM MoneyTHAPI ')
@@ -98,7 +98,7 @@ def tablegoldTH():
         connection = psycopg2.connect(user="webadmin",
                                 password="BFCqhr46914", 
                                 host="node4943-env-2254395.th.app.ruk-com.cloud", 
-                                port="11043", 
+                                port="5432", 
                                 database="pythonlogin")
         cursor = connection.cursor()
         cursor.execute('SELECT * FROM GoldTH ')
@@ -130,7 +130,7 @@ def forgot():
         connection = psycopg2.connect(user="webadmin",
                                 password="BFCqhr46914", 
                                 host="node4943-env-2254395.th.app.ruk-com.cloud", 
-                                port="11043", 
+                                port="5432", 
                                 database="pythonlogin")
         cursor = connection.cursor()
         cursor.execute('SELECT * FROM accounts WHERE username = %s AND code_repassword = %s', (username,code_repassword))
@@ -169,7 +169,7 @@ def register():
         connection = psycopg2.connect(user="webadmin",
                                 password="BFCqhr46914", 
                                 host="node4943-env-2254395.th.app.ruk-com.cloud", 
-                                port="11043", 
+                                port="5432", 
                                 database="pythonlogin")
         cursor = connection.cursor()
         cursor.execute('SELECT * FROM accounts WHERE username = %s', (username,))
