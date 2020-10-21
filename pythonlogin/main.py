@@ -104,7 +104,7 @@ def tablegoldTH():
         cursor.execute('SELECT * FROM GoldTH ')
         goldTH_records = cursor.fetchall()
         goldTH_records = goldTH_records[::-1]
-        return render_template("tablegoldTH.html", value=goldTH_records) 
+        return render_template("tablegoldth.html", value=goldTH_records) 
     return redirect(url_for('tablegoldTH'))
 
 
